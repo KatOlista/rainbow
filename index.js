@@ -12,7 +12,7 @@ submitBtn.addEventListener('click', () => {
 	module.classList.add('hide');
 	if (!userName || userName === 'Необходимо ввести имя!') {
 		module.classList.remove('hide');
-		input.value = `Необходимо ввести имя!`;
+		input.placeholder = `Необходимо ввести имя!`;
 		return;
 	}
 	hiMessage.textContent = `Сделай свой выбор, ${userName}!
