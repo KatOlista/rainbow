@@ -1,0 +1,18 @@
+{
+	"colors": [
+		{"red": "красный",
+			"userName": ""}, 
+		{"orange": "оранжевый",
+		"userName": ""}, 
+		{"yellow": "желтый",
+		"userName": ""}, 
+		{"green": "зеленый",
+		"userName": ""}, 
+		{"blue": "голубой",
+		"userName": ""}, 
+		{"dark blue": "синий",
+		"userName": ""}, 
+		{"violet": "фиолетовый",
+		"userName": ""}
+	]
+}

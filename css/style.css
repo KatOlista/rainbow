@@ -1,0 +1,125 @@
+body {
+  background: rgb(249, 210, 216);
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 420px;
+  height: 100vh;
+}
+
+.name {
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 20px;
+  max-width: 415px;
+  height: 30px;
+}
+
+.hi {
+  text-align: center;
+  width: 350px;
+  margin: 20px auto;
+  font-size: 30px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgb(249, 210, 216);
+  border: solid 2px rgb(237, 73, 101);
+  transition: all 1s ease;
+}
+
+.module {
+  top: 0;
+  box-sizing: border-box;
+  position: absolute;
+  padding: 30px 15px;
+  border-radius: 10px;
+  background-color: rgb(249, 210, 216);
+  max-width: 415px;
+  height: 80vh;
+  z-index: 4;
+  transition: all 1s ease;
+}
+.module label {
+  text-align: center;
+  display: block;
+  margin: 15px;
+  font-size: 35px;
+}
+.module input {
+  width: 350px;
+  margin: 20px auto;
+  font-size: 30px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: rgb(249, 210, 216);
+  border: solid 2px rgb(237, 73, 101);
+}
+
+button {
+  display: block;
+  font-size: 25px;
+  padding: 15px;
+  margin: 30px auto;
+  background: rgb(249, 210, 216);
+  border: solid 2px rgb(237, 73, 101);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-container {
+  margin: 100px 0 20px 0;
+  width: 100%;
+}
+
+.rainbow-container {
+  position: relative;
+  margin-top: 20px;
+  max-width: 415px;
+  height: 100vh;
+}
+
+.circle-wrapper {
+  position: relative;
+  height: 400px;
+}
+
+.wrapper {
+  top: 70px;
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sector {
+  position: absolute;
+  transform-origin: 100% 100%;
+  background: #ccc;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  border: 1px solid #999;
+  margin-top: -500px;
+  margin-left: -500px;
+}
+
+.buttons {
+  margin-top: 80px;
+}
+
+.hide {
+  overflow: hidden;
+  top: -2000%;
+  transition: all 1s ease;
+}
+
+.rotate {
+  transform: rotate(3600deg);
+  transition: all 3s ease;
+}/*# sourceMappingURL=style.css.map */
