@@ -32,7 +32,7 @@ body {
 	border-radius: 10px;
 	background-color: rgb(249, 210, 216);
 	width: 100vw;
-	height: 100vh;
+	height: 200vh;
 	z-index: 4;
 	transition: all 1s ease;
 	label {
@@ -115,7 +115,7 @@ button {
 
 .hide {
 	overflow: hidden;
-	top: -100vh;
+	top: -200vh;
 	transition: all 1s ease;
 }
 
