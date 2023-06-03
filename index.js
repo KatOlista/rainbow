@@ -29,13 +29,13 @@
 // 	}
 // ];
 
-const checkFreeColor = (col, data) => {
-	data.forEach(item => {
+const checkFreeColor = (col, jsonObj) => {
+	jsonObj.forEach(item => {
 		for (key in item) {
 			if (key === col && !item[userName]) {
 				item.userName = input.value;
 				console.log(`${item.userName}: твой цвет ${item[key]}`);
-				console.log(data);
+				console.log(jsonObj);
 			}
 		}
 	});
@@ -76,8 +76,8 @@ const freeColors = async function (col) {
 			return response.json();
 		})
 		.then((data) => {
-			const obj =
-				checkFreeColor(col, data);
+			const obj = JSON.parse(data);
+			checkFreeColor(col, obj);
 		});
 };
 
