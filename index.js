@@ -77,7 +77,8 @@ const freeColors = async function (col) {
 		})
 		.then((data) => {
 			const obj = JSON.parse(data);
-			checkFreeColor(col, obj);
+			console.log(obj);
+			//checkFreeColor(col, obj);
 		});
 };
 
