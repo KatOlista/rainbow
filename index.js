@@ -70,13 +70,13 @@ submitBtn.addEventListener('click', () => {
 	Внимание! У тебя только 1 попытка`;
 });
 
-const freeColors = async function () {
+const freeColors = async function (col) {
 	fetch('./base.json')
 		.then((response) => {
 			return response.json();
 		})
 		.then((data) => {
-			checkFreeColor(color, data);
+			checkFreeColor(col, data);
 		});
 };
 
@@ -91,7 +91,7 @@ let checkColor = function () {
 					colorNumber < 71.43 ? 'blue' :
 						colorNumber < 85.71 ? 'dark_blue' : 'violet';
 
-	freeColors();
+	freeColors(color);
 
 	// hiMessage.textContent = `${userName}, твой цвет ...`;
 
