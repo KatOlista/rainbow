@@ -1,3 +1,54 @@
+// const colors = [
+// 	{
+// 		red: "красный",
+// 		userName: ""
+// 	},
+// 	{
+// 		orange: "оранжевый",
+// 		userName: ""
+// 	},
+// 	{
+// 		yellow: "желтый",
+// 		userName: ""
+// 	},
+// 	{
+// 		green: "зеленый",
+// 		userName: ""
+// 	},
+// 	{
+// 		blue: "голубой",
+// 		userName: ""
+// 	},
+// 	{
+// 		dark_blue: "синий",
+// 		userName: ""
+// 	},
+// 	{
+// 		violet: "фиолетовый",
+// 		userName: ""
+// 	}
+// ];
+
+const checkFreeColor = (col, data) => {
+	data.forEach(item => {
+		for (key in item) {
+			if (key === col && !item[userName]) {
+				item.userName = input.value;
+				console.log(`${item.userName}: твой цвет ${item[key]}`);
+				console.log(data);
+			}
+		}
+	});
+};
+
+
+
+
+
+
+
+
+
 let userName;
 
 const input = document.getElementsByTagName('input')[0];
@@ -16,41 +67,40 @@ submitBtn.addEventListener('click', () => {
 		return;
 	}
 	hiMessage.textContent = `Сделай свой выбор, ${userName}!
-	Внимание! У тебя 1 попытка`;
+	Внимание! У тебя только 1 попытка`;
 });
 
-const freeColor = async function () {
+const freeColors = async function () {
 	fetch('./base.json')
 		.then((response) => {
 			return response.json();
 		})
 		.then((data) => {
-			console.log(data);
+			checkFreeColor(color, data);
 		});
-
 };
 
 let checkColor = function () {
 	rainbowWrapper.classList.add('rotate');
 	const colorNumber = Math.random() * 100;
 
-	freeColor();
-
 	const color = colorNumber < 14.286 ? 'red' :
 		colorNumber < 28.572 ? 'orange' :
 			colorNumber < 42.858 ? 'yellow' :
 				colorNumber < 57.144 ? 'green' :
 					colorNumber < 71.43 ? 'blue' :
-						colorNumber < 85.71 ? 'dark blue' : 'violet';
+						colorNumber < 85.71 ? 'dark_blue' : 'violet';
 
-	hiMessage.textContent = `${userName}, твой цвет ...`;
+	freeColors();
 
-	const infoColor = setInterval(() => {
-		hiMessage.textContent = `${userName}, твой цвет ${color}`;
-		clearInterval(infoColor);
-	}, 3000);
+	// hiMessage.textContent = `${userName}, твой цвет ...`;
 
-	randomBtn.removeEventListener('click', checkColor);
+	// const infoColor = setInterval(() => {
+	// 	hiMessage.textContent = `${userName}, твой цвет ${color}`;
+	// 	clearInterval(infoColor);
+	// }, 3000);
+
+	// randomBtn.removeEventListener('click', checkColor);
 }
 
 randomBtn.addEventListener('click', checkColor);
