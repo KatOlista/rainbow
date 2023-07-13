@@ -70,17 +70,17 @@ submitBtn.addEventListener('click', () => {
 	Внимание! У тебя только 1 попытка`;
 });
 
-const freeColors = async function (col) {
-	fetch('./base.json')
-		.then((response) => {
-			return response.json();
-		})
-		.then((data) => {
-			const obj = JSON.parse(data);
-			console.log(obj);
-			//checkFreeColor(col, obj);
-		});
-};
+// const freeColors = async function (col) {
+// 	fetch('./base.json')
+// 		.then((response) => {
+// 			return response.json();
+// 		})
+// 		.then((data) => {
+// 			const obj = JSON.parse(data);
+// 			console.log(obj);
+// 			//checkFreeColor(col, obj);
+// 		});
+// };
 
 let checkColor = function () {
 	rainbowWrapper.classList.add('rotate');
@@ -93,16 +93,14 @@ let checkColor = function () {
 					colorNumber < 71.43 ? 'blue' :
 						colorNumber < 85.71 ? 'dark_blue' : 'violet';
 
-	freeColors(color);
+	hiMessage.textContent = `${userName}, твой цвет ...`;
 
-	// hiMessage.textContent = `${userName}, твой цвет ...`;
+	const infoColor = setInterval(() => {
+		hiMessage.textContent = `${userName}, твой цвет ${color}`;
+		clearInterval(infoColor);
+	}, 3000);
 
-	// const infoColor = setInterval(() => {
-	// 	hiMessage.textContent = `${userName}, твой цвет ${color}`;
-	// 	clearInterval(infoColor);
-	// }, 3000);
-
-	// randomBtn.removeEventListener('click', checkColor);
+	randomBtn.removeEventListener('click', checkColor);
 }
 
 randomBtn.addEventListener('click', checkColor);
