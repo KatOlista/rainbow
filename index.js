@@ -1,54 +1,3 @@
-// const colors = [
-// 	{
-// 		red: "красный",
-// 		userName: ""
-// 	},
-// 	{
-// 		orange: "оранжевый",
-// 		userName: ""
-// 	},
-// 	{
-// 		yellow: "желтый",
-// 		userName: ""
-// 	},
-// 	{
-// 		green: "зеленый",
-// 		userName: ""
-// 	},
-// 	{
-// 		blue: "голубой",
-// 		userName: ""
-// 	},
-// 	{
-// 		dark_blue: "синий",
-// 		userName: ""
-// 	},
-// 	{
-// 		violet: "фиолетовый",
-// 		userName: ""
-// 	}
-// ];
-
-const checkFreeColor = (col, jsonObj) => {
-	jsonObj.forEach(item => {
-		for (key in item) {
-			if (key === col && !item[userName]) {
-				item.userName = input.value;
-				console.log(`${item.userName}: твой цвет ${item[key]}`);
-				console.log(jsonObj);
-			}
-		}
-	});
-};
-
-
-
-
-
-
-
-
-
 let userName;
 
 const input = document.getElementsByTagName('input')[0];
@@ -69,18 +18,6 @@ submitBtn.addEventListener('click', () => {
 	hiMessage.textContent = `Сделай свой выбор, ${userName}!
 	Внимание! У тебя только 1 попытка`;
 });
-
-// const freeColors = async function (col) {
-// 	fetch('./base.json')
-// 		.then((response) => {
-// 			return response.json();
-// 		})
-// 		.then((data) => {
-// 			const obj = JSON.parse(data);
-// 			console.log(obj);
-// 			//checkFreeColor(col, obj);
-// 		});
-// };
 
 let checkColor = function () {
 	rainbowWrapper.classList.add('rotate');
